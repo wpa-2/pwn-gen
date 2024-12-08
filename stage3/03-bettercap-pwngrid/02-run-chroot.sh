@@ -9,11 +9,13 @@ for pkg in bettercap pwngrid; do
         if [ $pkg = "pwngrid" ]; then
             cd "/usr/local/src/pwngrid"
             git pull
+            go mod tidy
             make
             make install
         elif [ $pkg = "bettercap" ]; then
             cd "/usr/local/src/bettercap"
             git pull
+            go mod tidy
             make
             make install
         fi
@@ -23,12 +25,14 @@ for pkg in bettercap pwngrid; do
             cd "/usr/local/src"
             git clone https://github.com/jayofelony/pwngrid.git
             cd "/usr/local/src/pwngrid"
+            go mod tidy
             make
             make install
         elif [ $pkg = "bettercap" ]; then
             cd "/usr/local/src"
             git clone --recurse-submodules https://github.com/bettercap/bettercap.git
             cd "/usr/local/src/bettercap"
+            go mod tidy
             make
             make install
         fi
