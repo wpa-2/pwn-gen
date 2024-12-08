@@ -5,16 +5,10 @@
 # refer to https://github.com/RPi-Distro/pi-gen/blob/master/README.md
 
 32bit:
-	git clone https://github.com/RPi-Distro/pi-gen.git pi-gen-32bit
-	rm -r pi-gen-32bit/stage2/EXPORT_IMAGE
 	sudo ./pi-gen-32bit/build.sh -c config-32bit
-	rm -rf pi-gen-32bit/
 
 64bit:
-	git clone -b arm64 https://github.com/RPi-Distro/pi-gen.git pi-gen-64bit
-	rm -r pi-gen-64bit/stage2/EXPORT_IMAGE
 	sudo ./pi-gen-64bit/build.sh -c config-64bit
-	rm -rf pi-gen-64bit/
 
 update_langs:
 	@for lang in stage3/05-install-pwnagotchi/files/pwnagotchi/pwnagotchi/locale/*/; do\
