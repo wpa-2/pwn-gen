@@ -23,6 +23,7 @@ libfreetype6
 libfreetype6-dev
 libgmp3-dev
 libjpeg-dev
+liblgpio-dev
 libnetfilter-queue-dev
 libopenjp2-7
 libpcap-dev
@@ -47,6 +48,7 @@ python3-setuptools
 qpdf
 rsync
 socat
+swig
 tcpdump
 texinfo
 unzip
