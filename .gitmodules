@@ -1,3 +1,0 @@
-[submodule "stage3/05-install-pwnagotchi/files/pwnagotchi"]
-	path = stage3/05-install-pwnagotchi/files/pwnagotchi
-	url = https://github.com/jayofelony/pwnagotchi.git

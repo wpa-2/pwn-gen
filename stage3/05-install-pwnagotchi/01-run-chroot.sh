@@ -1,10 +1,8 @@
 #!/bin/bash -e
 
-cd /opt/pwnagotchi
-
-if [ "$(uname -m)" = "armv6l" -o "$(uname -m)" = "armv7l" ]; then
-    export QEMU_CPU=arm1176
-fi
+cd /opt/
+git clone https://github.com/jayofelony/pwnagotchi.git
+cd pwnagotchi/
 
 echo -e "\e[32m### Installing python virtual environment ###\e[0m"
 python3 -m venv ../.pwn
