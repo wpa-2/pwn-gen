@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/local/go/bin
 # install go packages
 for pkg in bettercap pwngrid; do
     if [ -d "/usr/local/src"/$pkg ] ; then
-        echo -e "\e[32m===> Installing $pkg for $FOUNDARCH ===\e[0m"
+        echo -e "\e[32m===> Installing $pkg ===\e[0m"
         if [ $pkg = "pwngrid" ]; then
             cd "/usr/local/src/pwngrid"
             git pull
@@ -20,7 +20,7 @@ for pkg in bettercap pwngrid; do
             make install
         fi
     else
-        echo -e "\e[32m===> Installing $pkg for $FOUNDARCH ===\e[0m"
+        echo -e "\e[32m===> Installing $pkg ===\e[0m"
         if [ $pkg = "pwngrid" ]; then
             cd "/usr/local/src"
             git clone https://github.com/jayofelony/pwngrid.git
