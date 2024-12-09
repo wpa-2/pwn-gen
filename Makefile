@@ -4,10 +4,13 @@
 # WORK_DIR can use up to 20GB of storage space
 # refer to https://github.com/RPi-Distro/pi-gen/blob/master/README.md
 
+
+# clone pi-gen into pi-gen-32bit folder
 32bit:
 	sudo ./pi-gen-32bit/build.sh -c config-32bit
 	chown jayofelony:jayofelony -R ~/images
 
+# clone pi-gen arm64 branch into pi-gen-64bit folder
 64bit:
 	sudo ./pi-gen-64bit/build.sh -c config-64bit
 	chown jayofelony:jayofelony -R ~/images
