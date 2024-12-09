@@ -11,8 +11,9 @@ fi
 if [ -d .pwn ]; then
     rm -r /opt/.pwn
 fi
-
-export QEMU_CPU=arm1176
+if [ "$(uname -m)" = "armv6l" ]; then
+    export QEMU_CPU=arm1176
+fi
 
 echo -e "\e[32m### Installing python virtual environment ###\e[0m"
 python3 -m venv ../.pwn
