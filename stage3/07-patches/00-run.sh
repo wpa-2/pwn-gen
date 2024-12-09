@@ -73,3 +73,29 @@ fi
 echo -e "\e[32m### Setting NM Unmanaged udev rules to 0 ###\e[0m"
 cp "${ROOTFS_DIR}"/usr/lib/udev/rules.d/85-nm-unmanaged.rules "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
 sed -i '36 s/ENV{DEVTYPE}=="gadget", ENV{NM_UNMANAGED}="1"/ENV{DEVTYPE}=="gadget", ENV{NM_UNMANAGED}="0"/' "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
+
+cp "${PREV_ROOTFS_DIR}"/boot/firmware/config.txt "${ROOTFS_DIR}"/boot/firmware/config.txt
+cat << EOF >> "${ROOTFS_DIR}"/boot/firmware/config.txt
+dtparam=i2c1=on
+dtparam=i2c_arm=on
+dtparam=spi=on
+gpu_mem=1
+dtoverlay=dwc2
+enable_uart=1
+
+[pi0]
+dtoverlay=spi0-2cs
+#dtoverlay=disable-wifi
+
+[pi3]
+dtoverlay=spi0-2cs
+#dtoverlay=disable-wifi
+
+[pi4]
+dtoverlay=spi0-2cs
+#dtoverlay=disable-wifi
+
+[pi5]
+dtoverlay=spi0-2cs
+#dtoverlay=disable-wifi
+EOF

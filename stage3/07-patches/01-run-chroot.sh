@@ -12,28 +12,3 @@ systemctl disable wpa_supplicant apt-daily-upgrade.service apt-daily-upgrade.tim
 
 echo -e "\e[32m### Disable apt packages from upgrading ###\e[0m"
 apt-mark hold firmware-atheros firmware-brcm80211 firmware-libertas firmware-misc-nonfree firmware-realtek libpcap-dev libpcap0.8 libpcap0.8-dev
-
-cat << EOF >> /boot/firmware/config.txt
-dtparam=i2c1=on
-dtparam=i2c_arm=on
-dtparam=spi=on
-gpu_mem=1
-dtoverlay=dwc2
-enable_uart=1
-
-[pi0]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-
-[pi3]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-
-[pi4]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-
-[pi5]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-EOF
