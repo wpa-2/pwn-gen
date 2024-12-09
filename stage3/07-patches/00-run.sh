@@ -2,8 +2,10 @@
 
 echo -e "\e[32m### Installing patched files ###\e[0m"
 install -v -m 644 files/profile "${ROOTFS_DIR}/etc/profile"
-install -v -m 644 files/pyvenv.cfg "${ROOTFS_DIR}/opt/.pwn/pyvenv.cfg"
 install -v -m 644 files/sudoers "${ROOTFS_DIR}/etc/sudoers"
+
+echo -e "\e[32m### Use system packages ###\e[0m"
+sed -i '2 s/include-system-site-packages = false/include-system-site-packages = true/' "${ROOTFS_DIR}"/opt/.pwn/pyvenv.cfg
 
 # /usr/bin/
 # must be executable (755)

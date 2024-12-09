@@ -6,9 +6,11 @@
 
 32bit:
 	sudo ./pi-gen-32bit/build.sh -c config-32bit
+	chown jayofelony:jayofelony -R ~/images
 
 64bit:
 	sudo ./pi-gen-64bit/build.sh -c config-64bit
+	chown jayofelony:jayofelony -R ~/images
 
 update_langs:
 	@for lang in stage3/05-install-pwnagotchi/files/pwnagotchi/pwnagotchi/locale/*/; do\
