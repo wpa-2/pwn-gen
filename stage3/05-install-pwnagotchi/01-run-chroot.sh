@@ -8,6 +8,9 @@ else
     cd pwnagotchi/
     git pull
 fi
+if [ -d .pwn ]; then
+    rm -r /opt/.pwn
+fi
 
 export QEMU_CPU=arm1176
 
