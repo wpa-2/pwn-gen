@@ -37,7 +37,6 @@ libtiff6
 libtool
 libusb-1.0-0-dev
 make
-ntp
 pkg-config
 python3-dbg
 python3-dev
@@ -51,6 +50,7 @@ qpdf
 rsync
 socat
 swig
+systemd-timesyncd
 tcpdump
 texinfo
 unzip
