@@ -29,14 +29,6 @@ install -v -m 644 files/pwnagotchi_completion.sh "${ROOTFS_DIR}/etc/bash_complet
 echo -e "\e[32m### Installing /etc/modules-load.d/ files ###\e[0m"
 install -v -m 644 files/modules.conf "${ROOTFS_DIR}/etc/modules-load.d/modules.conf"
 
-# /etc/network/interfaces.d/
-# deprecated, now using NetworkManager configurations below. Keeping files for good measure, just in case.
-# echo -e "\e[32m### Installing /etc/network/interfaces.d/ files ###\e[0m"
-# install -v -m 644 files/eth0-cfg "${ROOTFS_DIR}/etc/network/interfaces.d/eth0-cfg"
-# install -v -m 644 files/lo-cfg "${ROOTFS_DIR}/etc/network/interfaces.d/lo-cfg"
-# install -v -m 644 files/usb0-cfg "${ROOTFS_DIR}/etc/network/interfaces.d/usb0-cfg"
-# install -v -m 644 files/wlan0-cfg "${ROOTFS_DIR}/etc/network/interfaces.d/wlan0-cfg"
-
 # /etc/systemd/system/
 echo -e "\e[32m### Installing /etc/systemd/system/ files ###\e[0m"
 install -v -m 644 files/bettercap.service "${ROOTFS_DIR}/etc/systemd/system/bettercap.service"
@@ -51,6 +43,7 @@ install -v -m 755 files/01-motd "${ROOTFS_DIR}/etc/update-motd.d/01-motd"
 # /etc/NetworkManager/
 echo -e "e[32m### Installing NetworkManager configurations ###\e[0m"
 install -v -m 600 files/usb0.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/usb0.nmconnection"
+install -v -m 600 files/loopback.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/loopback.nmconnection"
 install -v -m 644 files/NetworkManager.conf "${ROOTFS_DIR}/etc/NetworkManager/NetworkManager.conf"
 
 # /root/
@@ -71,8 +64,7 @@ if [ -f "${ROOTFS_DIR}/etc/profile.d/sshpwd.sh" ]; then
 fi
 
 echo -e "\e[32m### Setting NM Unmanaged udev rules to 0 ###\e[0m"
-cp "${ROOTFS_DIR}"/usr/lib/udev/rules.d/85-nm-unmanaged.rules "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
-sed -i '36 s/ENV{DEVTYPE}=="gadget", ENV{NM_UNMANAGED}="1"/ENV{DEVTYPE}=="gadget", ENV{NM_UNMANAGED}="0"/' "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
+install -v -m 644 files/85-nm-unmanaged.rules "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
 
 cp "${PREV_ROOTFS_DIR}"/boot/firmware/config.txt "${ROOTFS_DIR}"/boot/firmware/config.txt
 cat << EOF >> "${ROOTFS_DIR}"/boot/firmware/config.txt
