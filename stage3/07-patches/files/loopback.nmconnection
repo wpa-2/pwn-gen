@@ -1,0 +1,14 @@
+[connection]
+id=loopback
+type=loopback
+
+[loopback]
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=default
+method=auto
+
+[proxy]
