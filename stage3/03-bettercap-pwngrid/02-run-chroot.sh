@@ -45,5 +45,3 @@ git clone https://github.com/jayofelony/caplets.git
 cd "/home/pi/caplets"
 make install
 rm -rf "/home/pi/caplets"
-rm -r /usr/local/src/bettercap
-rm -r /usr/local/src/pwngrid
