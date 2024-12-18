@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-echo -e "\e[32m### Creating /root/handshakes ###\e[0m"
-install -v -d "${ROOTFS_DIR}/root/handshakes"
+echo -e "\e[32m### Creating /home/pi/handshakes ###\e[0m"
+install -v -d "${ROOTFS_DIR}/home/pi/handshakes"

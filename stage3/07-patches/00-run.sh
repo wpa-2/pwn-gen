@@ -5,7 +5,7 @@ install -v -m 644 files/profile "${ROOTFS_DIR}/etc/profile"
 install -v -m 644 files/sudoers "${ROOTFS_DIR}/etc/sudoers"
 
 echo -e "\e[32m### Use system packages ###\e[0m"
-sed -i '2 s/include-system-site-packages = false/include-system-site-packages = true/' "${ROOTFS_DIR}"/opt/.pwn/pyvenv.cfg
+sed -i '2 s/include-system-site-packages = false/include-system-site-packages = true/' "${ROOTFS_DIR}"/home/pi/.pwn/pyvenv.cfg
 
 # /usr/bin/
 # must be executable (755)

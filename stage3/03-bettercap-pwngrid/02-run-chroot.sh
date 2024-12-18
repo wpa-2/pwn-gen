@@ -4,16 +4,16 @@ export PATH=$PATH:/usr/local/go/bin
 
 # install go packages
 for pkg in bettercap pwngrid; do
-    if [ -d "/usr/local/src"/$pkg ] ; then
+    if [ -d "/home/pi/"/$pkg ] ; then
         echo -e "\e[32m===> Installing $pkg ===\e[0m"
         if [ $pkg = "pwngrid" ]; then
-            cd "/usr/local/src/pwngrid"
+            cd "/home/pi/pwngrid"
             git pull
             go mod tidy
             make
             make install
         elif [ $pkg = "bettercap" ]; then
-            cd "/usr/local/src/bettercap"
+            cd "/home/pi/bettercap"
             git pull
             go mod tidy
             make
@@ -22,16 +22,16 @@ for pkg in bettercap pwngrid; do
     else
         echo -e "\e[32m===> Installing $pkg ===\e[0m"
         if [ $pkg = "pwngrid" ]; then
-            cd "/usr/local/src"
+            cd "/home/pi"
             git clone https://github.com/jayofelony/pwngrid.git
-            cd "/usr/local/src/pwngrid"
+            cd "/home/pi/pwngrid"
             go mod tidy
             make
             make install
         elif [ $pkg = "bettercap" ]; then
-            cd "/usr/local/src"
+            cd "/home/pi"
             git clone --recurse-submodules https://github.com/bettercap/bettercap.git
-            cd "/usr/local/src/bettercap"
+            cd "/home/pi/bettercap"
             go mod tidy
             make
             make install
@@ -40,8 +40,10 @@ for pkg in bettercap pwngrid; do
 done
 # install bettercap caplets
 echo -e "\e[32m=== Installing bettercap caplets ===\e[0m"
-cd "/usr/local/src"
+cd "/home/pi/"
 git clone https://github.com/jayofelony/caplets.git
-cd "/usr/local/src/caplets"
+cd "/home/pi/caplets"
 make install
-rm -rf "/usr/local/src/caplets"
+rm -rf "/home/pi/caplets"
+rm -r /usr/local/src/bettercap
+rm -r /usr/local/src/pwngrid
