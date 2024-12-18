@@ -9,7 +9,7 @@ else
     git pull
 fi
 if [ -d .pwn ]; then
-    rm -r /opt/.pwn
+    rm -r .pwn/
 fi
 if [ "$(uname -m)" = "armv6l" ]; then
     export QEMU_CPU=arm1176

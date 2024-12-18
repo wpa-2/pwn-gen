@@ -9,3 +9,6 @@ autoconnect=yes
 address1=10.0.0.2/24,10.0.0.1
 dns=8.8.8.8;1.1.1.1;
 method=manual
+
+[ipv6]
+method=disabled
