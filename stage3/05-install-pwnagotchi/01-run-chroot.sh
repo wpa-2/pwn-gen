@@ -4,10 +4,12 @@ cd /home/pi
 if [ ! -d pwnagotchi ]; then
     git clone https://github.com/jayofelony/pwnagotchi.git
     cd pwnagotchi/
+else
+    cd /home/pi/pwnagotchi/
+    git pull
 fi
-if [ -d /opt/.pwn ]; then
-    rm -r /opt/.pwn/
-    rm -r /opt/pwnagotchi
+if [ -d /home/pi/.pwn ]; then
+    rm -r /home/pi/.pwn
 fi
 if [ "$(uname -m)" = "armv6l" ]; then
     export QEMU_CPU=arm1176
