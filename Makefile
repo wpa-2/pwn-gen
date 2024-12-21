@@ -7,13 +7,13 @@
 
 # clone pi-gen into pi-gen-32bit folder
 32bit:
-	sudo ./pi-gen-32bit/build.sh -c config-32bit
-	chown jayofelony:jayofelony -R /home/jayofelony/images
+	sudo ./pi-gen-32bit/build.sh -c config-32bit 1> /dev/null
+	chown jayofelony:jayofelony -R /home/jayofelony/images 1> /dev/null
 
 # clone pi-gen arm64 branch into pi-gen-64bit folder
 64bit:
-	sudo ./pi-gen-64bit/build.sh -c config-64bit
-	chown jayofelony:jayofelony -R /home/jayofelony/images
+	sudo ./pi-gen-64bit/build.sh -c config-64bit 1> /dev/null
+	chown jayofelony:jayofelony -R /home/jayofelony/images 1> /dev/null
 
 update_langs:
 	@for lang in stage3/05-install-pwnagotchi/files/pwnagotchi/pwnagotchi/locale/*/; do\
