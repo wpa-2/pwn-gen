@@ -43,6 +43,7 @@ install -v -m 755 files/01-motd "${ROOTFS_DIR}/etc/update-motd.d/01-motd"
 # /etc/NetworkManager/
 echo -e "e[32m### Installing NetworkManager configurations ###\e[0m"
 install -v -m 600 files/usb0.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/usb0.nmconnection"
+install -v -m 600 files/eth0.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/eth0.nmconnection"
 install -v -m 600 files/loopback.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/loopback.nmconnection"
 install -v -m 644 files/NetworkManager.conf "${ROOTFS_DIR}/etc/NetworkManager/NetworkManager.conf"
 
