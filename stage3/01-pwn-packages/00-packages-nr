@@ -47,6 +47,7 @@ python3-pil
 python3-pip
 python3-prctl
 python3-setuptools
+python3-virtualenv
 qpdf
 rsync
 socat
