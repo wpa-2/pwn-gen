@@ -8,6 +8,6 @@ autoconnect=true
 
 [ipv4]
 method=auto
-
+route-metric=100
 [ipv6]
 method=ignore
