@@ -2,7 +2,7 @@
 id=usb0
 type=ethernet
 interface-name=usb0
-autoconnect=yes
+autoconnect=true
 
 [ethernet]
 
