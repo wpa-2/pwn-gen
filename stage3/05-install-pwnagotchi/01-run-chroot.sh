@@ -36,7 +36,6 @@ pip3 install . --no-cache-dir
 deactivate
 
 cd /home/pi
-rm /usr/bin/pwnagotchi
 
 ln -sf /home/pi/.pwn/bin/pwnagotchi /usr/bin/pwnagotchi
 rm -r /home/pi/pwnagotchi
