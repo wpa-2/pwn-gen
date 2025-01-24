@@ -36,5 +36,5 @@ fi
 alias custom='cd /usr/local/share/pwnagotchi/custom-plugins/'
 alias config='sudo nano /etc/pwnagotchi/config.toml'
 alias pwnlog='tail -f -n300 /etc/pwnagotchi/log/pwnagotchi.log | sed --unbuffered "s/,[[:digit:]]\\{3\\}\\]//g" | cut -d " " -f 2-'
-alias pwnkill='sudo killall -USR1 pwnagotchi'
+alias pwnkill='sudo systemctl restart pwnagotchi'
 alias debug='sudo systemctl stop pwnagotchi && sudo pwnagotchi --debug'
