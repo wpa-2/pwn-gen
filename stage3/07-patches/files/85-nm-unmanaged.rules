@@ -34,6 +34,5 @@ ENV{ID_NET_DRIVER}=="veth", ENV{INTERFACE}!="eth[0-9]*", ENV{NM_UNMANAGED}="1"
 # might want to set it up itself (e.g. activate an ipv4.method=shared
 # connection).
 ENV{DEVTYPE}=="gadget", ENV{NM_UNMANAGED}="0"
-ENV{DEVTYPE}=="bluetooth", ENV{NM_UNMANAGED="0"
 ENV{DEVTYPE}=="loopback", ENV{NM_UNMANAGED}="0"
 LABEL="nm_unmanaged_end"
