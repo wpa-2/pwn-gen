@@ -31,6 +31,9 @@ echo -e "\e[32m### Activating virtual environment ###\e[0m"
 source /home/pi/.pwn/bin/activate
 
 echo -e "\e[32m### Installing Pwnagotchi ###\e[0m"
+export PATH="/root/.cargo/bin:$PATH"
+source /root/.profile
+source /root/.cargo/env
 pip3 cache purge
 pip3 install . --no-cache-dir
 deactivate
