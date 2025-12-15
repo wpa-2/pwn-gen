@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # install nexmon
-NEXMON_REPO=https://github.com/DrSchottky/nexmon.git
+NEXMON_REPO=https://github.com/jayofelony/nexmon.git
 NEXMON_PATCHES="patches/bcm43430a1/7_45_41_46/nexmon patches/bcm43455c0/7_45_206/nexmon patches/bcm43436b0/9_88_4_65/nexmon"
 
 PHOME=/usr/local/src
@@ -14,12 +14,18 @@ shopt -s globstar
 MOD_DEST="/lib/modules/**/kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac"
 # Check if the specific file does not exist
 if [ ! -f "${MOD_DEST}/brcmfmac.ko.xz.ORIG" ]; then
-    echo -e "\e[32m=== cloning nexmon repository ===\e[0m"
-    git clone $NEXMON_REPO
-    cd nexmon
+
+    if [ ! -d "/usr/local/src/nexmon" ]; then
+      echo -e "\e[32m=== cloning nexmon repository ===\e[0m"
+      git clone $NEXMON_REPO
+    fi
+
+    cd /usr/local/src/nexmon
 
     source setup_env.sh
     make
+
+
     # for each kernel with a build directory
     for mod in $(cd /lib/modules ; ls); do
 

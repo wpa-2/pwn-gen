@@ -1,5 +1,6 @@
 aircrack-ng
 autoconf
+automake
 bison
 bluez
 bluez-tools
@@ -12,7 +13,6 @@ g++
 gawk
 gcc-arm-none-eabi
 git
-libatlas-base-dev
 libbluetooth-dev
 libc6-dev
 libcurl4-openssl-dev
@@ -21,7 +21,7 @@ libdbus-1-dev
 libdbus-glib-1-dev
 libfl-dev
 libfreetype6
-libfreetype6-dev
+libfreetype-dev
 libgmp3-dev
 libjpeg-dev
 liblgpio-dev
@@ -29,9 +29,7 @@ libnetfilter-queue-dev
 libopenblas-dev
 libopenjp2-7
 libpcap-dev
-libraspberrypi-dev
-libraspberrypi-doc
-libraspberrypi0
+libdtovl0
 libssl-dev
 libssl-ocaml-dev
 libtiff6
