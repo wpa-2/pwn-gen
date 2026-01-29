@@ -4,6 +4,8 @@
 # WORK_DIR can use up to 20GB of storage space
 # refer to https://github.com/RPi-Distro/pi-gen/blob/master/README.md
 
+# sudo apt-get install -y make git quilt qemu-user-static debootstrap zerofree libarchive-tools curl pigz arch-test qemu-utils qemu-system-arm qemu-user
+# gcc-aarch64-linux-gnu gcc-arm-linux-gnueabihf
 
 # clone pi-gen into pi-gen-32bit folder
 32bit:
