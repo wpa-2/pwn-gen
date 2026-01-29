@@ -1,5 +1,6 @@
 #cloud-config
-
+rpi:
+    enable_usb_gadget: true
 # This is the user-data configuration file for cloud-init. By default this sets
 # up an initial user called "ubuntu" with password "ubuntu", which must be
 # changed at first login. However, many additional actions can be initiated on
