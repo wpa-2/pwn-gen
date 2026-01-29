@@ -37,12 +37,6 @@ install -v -m 644 files/pwngrid-peer.service "${ROOTFS_DIR}/etc/systemd/system/p
 echo -e "\e[32m### Installing /etc/update-motd.d/ files ###\e[0m"
 install -v -m 755 files/01-motd "${ROOTFS_DIR}/etc/update-motd.d/01-motd"
 
-# /etc/NetworkManager/
-echo -e "e[32m### Installing NetworkManager configurations ###\e[0m"
-install -v -m 600 files/usb0.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/usb0.nmconnection"
-install -v -m 600 files/eth0.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/eth0.nmconnection"
-install -v -m 600 files/loopback.nmconnection "${ROOTFS_DIR}/etc/NetworkManager/system-connections/loopback.nmconnection"
-
 # /root/
 echo -e "\e[32m### Installing /root/ files ###\e[0m"
 install -v -m 644 files/client_secrets.json "${ROOTFS_DIR}/root/client_secrets.json"
@@ -61,7 +55,7 @@ if [ -f "${ROOTFS_DIR}/etc/profile.d/sshpwd.sh" ]; then
 fi
 
 echo -e "\e[32m### Setting NM Unmanaged udev rules to 0 ###\e[0m"
-install -v -m 644 files/85-nm-unmanaged.rules "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
+# install -v -m 644 files/85-nm-unmanaged.rules "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
 
 cp "${PREV_ROOTFS_DIR}"/boot/firmware/config.txt "${ROOTFS_DIR}"/boot/firmware/config.txt
 cat << EOF >> "${ROOTFS_DIR}"/boot/firmware/config.txt
