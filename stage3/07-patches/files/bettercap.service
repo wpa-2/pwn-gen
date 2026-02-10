@@ -5,6 +5,8 @@ Wants=network.target
 
 [Service]
 Type=simple
+LimitNOFILE=65535
+TasksMax=infinity
 ExecStart=/usr/bin/bettercap-launcher
 Restart=always
 RestartSec=30
