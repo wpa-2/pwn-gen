@@ -22,10 +22,6 @@ install -v -m 644 files/dphys-swapfile "${ROOTFS_DIR}/etc/dphys-swapfile"
 echo -e "\e[32m### Installing /etc/bash_completion.d/ files ###\e[0m"
 install -v -m 644 files/pwnagotchi_completion.sh "${ROOTFS_DIR}/etc/bash_completion.d/pwnagotchi_completion.sh"
 
-# /etc/modules-load.d/
-echo -e "\e[32m### Installing /etc/modules-load.d/ files ###\e[0m"
-install -v -m 644 files/modules.conf "${ROOTFS_DIR}/etc/modules-load.d/modules.conf"
-
 # /etc/systemd/system/
 echo -e "\e[32m### Installing /etc/systemd/system/ files ###\e[0m"
 install -v -m 644 files/bettercap.service "${ROOTFS_DIR}/etc/systemd/system/bettercap.service"
@@ -53,32 +49,3 @@ fi
 if [ -f "${ROOTFS_DIR}/etc/profile.d/sshpwd.sh" ]; then
     rm "${ROOTFS_DIR}/etc/profile.d/sshpwd.sh"
 fi
-
-echo -e "\e[32m### Setting NM Unmanaged udev rules to 0 ###\e[0m"
-# install -v -m 644 files/85-nm-unmanaged.rules "${ROOTFS_DIR}"/etc/udev/rules.d/85-nm-unmanaged.rules
-
-cp "${PREV_ROOTFS_DIR}"/boot/firmware/config.txt "${ROOTFS_DIR}"/boot/firmware/config.txt
-cat << EOF >> "${ROOTFS_DIR}"/boot/firmware/config.txt
-dtparam=i2c1=on
-dtparam=i2c_arm=on
-dtparam=spi=on
-gpu_mem=1
-dtoverlay=dwc2
-enable_uart=1
-
-[pi0]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-
-[pi3]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-
-[pi4]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-
-[pi5]
-dtoverlay=spi0-2cs
-#dtoverlay=disable-wifi
-EOF
