@@ -18,8 +18,8 @@ else
     cd /home/pi/pwnagotchi/
     git pull
 fi
-if [ -d /usr/local/src/.pwn ]; then
-    rm -r /usr/local/src/.pwn
+if [ -d /home/pi/.pwn ]; then
+    rm -r /opt/.pwn
 fi
 if [ "$(uname -m)" = "armv6l" ]; then
     export QEMU_CPU=arm1176
