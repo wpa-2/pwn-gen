@@ -1,0 +1,21 @@
+#cloud-config
+
+hostname: pwnagotchi
+manage_etc_hosts: true
+
+rpi:
+    enable_usb_gadget: true
+    spi: true
+    i2c: true
+    serial: true
+    onewire: true
+
+users:
+    - name: pi
+        groups: users,adm,dialout,audio,netdev,video,plugdev,cdrom,games,input,gpio,spi,i2c,render,sudo
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
+        lock_passwd: false
+        plain_text_password: raspberry
+
+enable_ssh: true
