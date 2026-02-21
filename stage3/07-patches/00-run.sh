@@ -38,6 +38,8 @@ echo -e "\e[32m### Installing /root/ files ###\e[0m"
 install -v -m 644 files/client_secrets.json "${ROOTFS_DIR}/root/client_secrets.json"
 install -v -m 644 files/settings.yaml "${ROOTFS_DIR}/root/settings.yaml"
 
+install -v -m 644 files/user-data " ${ROOTFS_DIR}/boot/firmware/user-data"
+
 # Remove unnecessary files, if they exist
 echo -e "\e[32m### Removing unnecessary files ###\e[0m"
 if [ -f "${ROOTFS_DIR}/etc/motd" ]; then
