@@ -1,6 +1,8 @@
 #!/bin/bash -e
+PWNUSER="${FIRST_USER_NAME:-pi}"
+PWNHOME="/home/${PWNUSER}"
 
-cd /home/pi
+cd "${PWNHOME}"
 wget https://kali.download/kali/pool/non-free-firmware/f/firmware-nexmon/firmware-nexmon_0.2_all.deb
 wget https://http.kali.org/kali/pool/contrib/b/brcmfmac-nexmon-dkms/brcmfmac-nexmon-dkms_6.12.2_all.deb
 
